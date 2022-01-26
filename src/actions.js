@@ -23,11 +23,19 @@ export function B(bomb) {
 }
 
 //==========================================================================================
-export const NEXT = "GO_NEXT"
-export const PREV = "GO_PREV"
-export function next() {
-    return { type: NEXT }
+export const HOME = "GO_HOME"
+export const RESEARCH = "GO_RESEARCH"
+export const RESULT = "GO_RESULT"
+export const DESC = "GO_DESC"
+export function goHome() {
+    return { type: HOME }
 }
-export function prev() {
-    return { type: PREV }
+export function goResearch() {
+    return { type: RESEARCH }
+}
+export function goResult() {
+    return { type: RESULT }
+}
+export function goDesc() {
+    return { type: DESC }
 }
