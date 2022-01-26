@@ -9,7 +9,7 @@ import { Provider } from 'react-redux' //하위 컴포넌트에게 store를 전�
 
 
 require('dotenv').config();
-
+const store = createStore(reducer)
 /*
 * index.js : src 폴더에 포함되어 있다. 최상위 컴포넌트인 <App />을 DOM에 렌더링하는 index.js에서 작업을 진행.
 * App.js : src 폴더에 포함되어 있고, 컴포넌트를 정의하는 프로그램이다.
@@ -17,7 +17,9 @@ require('dotenv').config();
 * */
 ReactDOM.render(
   <React.StrictMode>
+      <Provider store={store}>
         <App />
+      </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
