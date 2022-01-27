@@ -11,6 +11,7 @@ import Result from 'view/result';
 import Description from 'view/desciption';
 import NotFound from 'view/NotFound';
 import Footer from 'components/Footer';
+import {useSelector} from "react-redux";
 //import store from './store'
 
 //import {useSelector} from "react-redux";
@@ -30,7 +31,10 @@ import Footer from 'components/Footer';
 // unsubscribe();
 
 function App() {
+  //useSelector(state => this.state)
   const [mainState, setMainState] = useState(APP_STATE.HOME);
+
+
   const [type, setType] = useState('');
   const [isActive, setIsActive] = useState(false);
 
