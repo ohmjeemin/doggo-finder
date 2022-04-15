@@ -6,13 +6,17 @@
   align-items: center;
   margin-top: 70px;
 
+  & > * {
+    margin-bottom: 12px;
+  }
+
   .desc-title {
     margin-bottom: 150px;
   }
 
   .desc-box {
     width: 335px;
-    margin-bottom: 20px;
+    // margin-bottom: 12px;
 
     display: flex;
     flex-direction: column;
@@ -27,7 +31,6 @@
     .desc-box__img {
       width: 230px;
       height: 230px;
-      // background-size: contain;
 
       position: absolute;
       top: -9rem;

@@ -1,18 +1,22 @@
 import React from 'react';
 import Button from 'components/Button';
 import Layout from 'components/Layout';
+import { actions } from 'my-redux/state';
+import { useDispatch } from 'react-redux';
 
 import '../scss/home.scss';
 
 import { APP_STATE } from 'constant/stringEnum.js';
 import { useMainState } from 'common/customHooks.js';
 
-const Home = ({ history, setMainState, setIsActive }) => {
-  // one of customHook
-  useMainState(APP_STATE.HOME, setMainState);
+const Home = ({ history }) => {
+  useMainState(APP_STATE.HOME);
+
+  // redux
+  const dispatch = useDispatch();
 
   const onStartClick = () => {
-    setIsActive(true);
+    dispatch(actions.setActive(true));
     history.push('/research/0');
   };
 

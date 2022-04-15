@@ -1,8 +1,13 @@
 import React from 'react';
 
 import Button from 'components/Button';
+import { getType } from 'my-redux/selector';
+import { useSelector } from 'react-redux';
 
-const Confirm = ({ type, history }) => {
+const Confirm = ({ history }) => {
+  // redux - useSelector 사용
+  const type = useSelector(getType);
+
   const moveDescView = () => {
     if (type) {
       const lowerType = type.toLowerCase();

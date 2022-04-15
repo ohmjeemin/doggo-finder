@@ -10,8 +10,8 @@ import { APP_STATE } from 'constant/stringEnum.js';
 
 import { useMainState } from 'common/customHooks.js';
 
-const Result = ({ setMainState, history, type }) => {
-  useMainState(APP_STATE.RESULT, setMainState);
+const Result = ({ history }) => {
+  useMainState(APP_STATE.RESULT);
 
   const [view, setView] = useState(RESULT_VIEWTYPE.PROGRESSIVE_BAR);
   return (
@@ -22,9 +22,7 @@ const Result = ({ setMainState, history, type }) => {
         }`}
       >
         {!isNil(view) && view === 0 && <Progressive setView={setView} />}
-        {!isNil(view) && view === 1 && (
-          <Confirm type={type} history={history} />
-        )}
+        {!isNil(view) && view === 1 && <Confirm history={history} />}
       </div>
     </>
   );

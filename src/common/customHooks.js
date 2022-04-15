@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-
+import { actions } from 'my-redux/state';
+import { useDispatch } from 'react-redux';
 import { isNil } from 'utils/commonUtil';
 
 /**
@@ -61,12 +62,15 @@ export const useInterval = (callback, delay) => {
 
 /**
  * 상태를 변경한다.
+ * 2022-03-09 @uhjee - 기본 컴포넌트 state에서 store의 state 변경 hook으로 수정
  * @author  uhjee
  * @param   {[string]}  state     (HOME, RESEARCH, RESULT, DESCRIPTION)
  * @param   {[function]}  setState  [setState description]
  */
-export const useMainState = (state, setState) => {
+export const useMainState = mainState => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    setState(state);
-  }, [state, setState]);
+    dispatch(actions.setMainState(mainState));
+  }, [mainState]);
 };

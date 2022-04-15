@@ -7,12 +7,14 @@ import '../../scss/description.scss';
 import { RESULT_DESC_INFO } from 'constant/description';
 import { APP_STATE } from 'constant/stringEnum.js';
 import Button from 'components/Button';
+import Spinner from 'components/Spinner';
+import AbandonedDogList from './abandonedDogList';
 
 import { isNil } from 'utils/commonUtil';
 import { useMainState } from 'common/customHooks.js';
 
-const Description = ({ setMainState, history }) => {
-  useMainState(APP_STATE.DESC, setMainState);
+const Description = ({ history }) => {
+  useMainState(APP_STATE.DESC);
 
   const { dogType } = useParams();
   const [descInfo, setDescInfo] = useState({});
@@ -53,7 +55,10 @@ const Description = ({ setMainState, history }) => {
           <p dangerouslySetInnerHTML={{ __html: descInfo.descText }}></p>
         </div>
       </div>
-      <Button text="첫 화면으로" handler={goHome} />
+      <Spinner>
+        <AbandonedDogList kindCd={descInfo.kindCd} />
+      </Spinner>
+      <Button text="테스트 다시 하기" handler={goHome} />
     </div>
   );
 };

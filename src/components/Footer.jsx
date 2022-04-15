@@ -18,7 +18,7 @@ const Footer = () => {
         <span className="creator__link" ref={ohmjeeminEl}>
           ohmjeemin
         </span>{' '}
-        🧡{' '}
+        and{' '}
         <span className="creator__link" ref={uhjeeEl}>
           uhjee
         </span>

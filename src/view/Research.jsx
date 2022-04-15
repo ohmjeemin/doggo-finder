@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { actions } from 'my-redux/state';
 
 import Answer from 'components/Answer';
 import Progress from 'components/Progress';
@@ -12,8 +14,10 @@ import { APP_STATE } from 'constant/stringEnum.js';
 
 import { useMainState } from 'common/customHooks.js';
 
-export default function Research({ setMainState, setType, history }) {
-  useMainState(APP_STATE.RESEARCH, setMainState);
+export default function Research({ history }) {
+  // redux
+  useMainState(APP_STATE.RESEARCH);
+  const dispatch = useDispatch();
 
   const [page, setPage] = useState(0);
   const [question, setQuestion] = useState({});
@@ -49,6 +53,15 @@ export default function Research({ setMainState, setType, history }) {
   });
   const [rate, setRate] = useState(0);
   const [prev, setPrev] = useState(0);
+
+  /**
+   * store의 _type state를 변경한다.
+   * @author  uhjee
+   * @param {string} type
+   */
+  const setType = type => {
+    dispatch(actions.setType(type));
+  };
 
   /**
    * addPoint 호출 후 page를 바꾼다

@@ -54,13 +54,12 @@ const KakaoShareButton = () => {
           padding: '5px 8px',
           borderRadius: '10px',
           color: '#7b6f66',
-          fontFamily: 'HSGaeulSenggak20',
           background: '#ffffff',
         }}
       >
         <div
           style={{
-            fontSize: '10px',
+            fontSize: '12px',
             marginRight: '10px',
             display: 'flex',
             alignItems: 'center',

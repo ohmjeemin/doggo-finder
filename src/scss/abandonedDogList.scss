@@ -1,0 +1,87 @@
+@import './variable.scss';
+
+.abandoned-list-box {
+  width: 335px;
+  height: 252px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  border-radius: 6px;
+
+  background-color: #fff;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  // margin-bottom: 12px;
+
+  .abandoned-item-box {
+    height: 62px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dfd9d9;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 8px;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    img.abandoned-item__img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    .abandoned-item__empty-img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-right: 20px;
+      background-color: $sand-shell;
+    }
+    .abandoned-item__desc {
+      flex-grow: 1;
+      font-size: 0.82rem;
+      color: #666;
+      font-weight: 600;
+      .row {
+        width: 238px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1px;
+
+        & > * {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        & > *::after {
+          content: '·';
+          color: rgb(194, 187, 187);
+          margin: 0 2px;
+        }
+        & > *:last-child::after {
+          content: '';
+        }
+
+        &:first-child {
+          margin-bottom: 4px;
+        }
+        &.care-info {
+          color: $grey;
+          font-size: 0.7rem;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

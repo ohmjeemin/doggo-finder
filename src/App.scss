@@ -17,6 +17,9 @@
   &.olive {
     background-color: #567149;
   }
+  &.dark-brown {
+    background-color: $dark-brown;
+  }
 }
 
 // TEXT 관련
@@ -49,6 +52,10 @@ h2 {
 h3 {
   margin-bottom: 40px;
   font-size: 1.3rem;
+}
+
+.mr-4 {
+  margin-right: 4px;
 }
 
 /*.kakao-share-button {
